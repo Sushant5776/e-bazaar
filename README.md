@@ -1,6 +1,6 @@
 # E - Bazaar (An E-Commerce Project)
 
-It is an online shopping website where you can buy affordable products as per your convenience. (A dummy website)
+This is an online shopping website where you can buy affordable products as per your convenience. (A dummy website)
 
 ## Technologies in Use
 

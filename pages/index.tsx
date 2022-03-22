@@ -1,4 +1,5 @@
 import Header from '@/components/Header'
+import Thumbnails from '@/components/Thumbnails'
 import type { NextPage } from 'next'
 import Head from 'next/head'
 
@@ -15,6 +16,7 @@ const Home: NextPage = () => {
 
       <div className="min-h-screen backdrop-blur-3xl">
         <Header />
+        <Thumbnails />
       </div>
     </div>
   )

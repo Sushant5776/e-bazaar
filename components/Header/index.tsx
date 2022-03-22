@@ -6,7 +6,7 @@ const Header = () => {
       {/* Left */}
       <div className="flex items-start space-x-2 rounded-tr-[48px] rounded-br-[18px] bg-[#373c370d] py-1 px-5">
         <ShoppingBagIcon className="h-7 w-7" />
-        <h1 className="text-2xl font-medium text-[#FFBF4E]">E-Bazaar</h1>
+        <h1 className="text-2xl font-medium text-[#E9C300]">E-Bazaar</h1>
       </div>
 
       {/* Right */}

@@ -5,8 +5,10 @@ const Thumbnails = () => {
   return (
     <Carousel
       autoPlay
-      interval={2000}
+      interval={2500}
       showStatus={false}
+      showArrows={false}
+      stopOnHover
       infiniteLoop
       className="mx-auto mt-4 h-[224px] w-[85%] rounded-lg"
     >

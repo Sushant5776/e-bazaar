@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Rating from '@/components/Rating'
+import { CategoryResponse } from 'types/category'
 
 const ItemCard = ({
   item: { image, title, description, price, rating },

@@ -4,7 +4,9 @@ import { XIcon } from '@heroicons/react/outline'
 import { GetServerSideProps, NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
+import { CategoryResponse } from 'types/category'
 import { CategoryPageContextParams } from 'types/interfaces'
+import { CategoryPageProps } from 'types/props'
 
 const CategoryPage: NextPage<CategoryPageProps> = ({
   categoryTitle,

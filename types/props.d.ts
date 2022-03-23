@@ -1,11 +1,11 @@
-interface CategoryCardProps {
+export interface CategoryCardProps {
   imageSrc: string
   title: string
   position: string
   hrefLink: string
 }
 
-interface CategoryPageProps {
+export interface CategoryPageProps {
   categoryTitle: string
   categoryImage: string
   items: CategoryResponse[] | []

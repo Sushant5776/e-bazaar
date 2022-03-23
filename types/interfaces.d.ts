@@ -1,5 +1,5 @@
 import { ParsedUrlQuery } from 'querystring'
 
-interface CategoryPageContextParams extends ParsedUrlQuery {
+export interface CategoryPageContextParams extends ParsedUrlQuery {
   category: string
 }

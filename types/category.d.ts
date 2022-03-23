@@ -1,4 +1,4 @@
-interface CategoryResponse {
+export interface CategoryResponse {
   id: number
   title: string
   price: number

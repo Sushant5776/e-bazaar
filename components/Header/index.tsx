@@ -4,7 +4,7 @@ const Header = () => {
   return (
     <header className="flex items-center justify-between">
       {/* Left */}
-      <div className="flex items-start space-x-2 rounded-tr-[48px] rounded-br-[18px] bg-[#373c370d] py-1 px-5">
+      <div className="flex items-start space-x-2 rounded-tr-[48px] rounded-br-[18px] bg-[#373c370d] py-1 pl-2 pr-5">
         <ShoppingBagIcon className="h-7 w-7" />
         <h1 className="text-2xl font-medium text-[#E9C300]">E-Bazaar</h1>
       </div>

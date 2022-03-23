@@ -1,4 +1,5 @@
 import Categories from '@/components/Categories'
+import Footer from '@/components/Footer'
 import Header from '@/components/Header'
 import Thumbnails from '@/components/Thumbnails'
 import type { NextPage } from 'next'
@@ -13,12 +14,14 @@ const Home: NextPage = () => {
       <Head>
         <title>E - Bazaar</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta name="theme-color" content="#e91e6340" />
       </Head>
 
       <div className="min-h-screen backdrop-blur-3xl">
         <Header />
         <Thumbnails />
         <Categories />
+        <Footer />
       </div>
     </div>
   )

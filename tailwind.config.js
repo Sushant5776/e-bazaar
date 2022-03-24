@@ -4,7 +4,12 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      screens: {
+        'mobile-s': '320px',
+        'mobile-l': '425px',
+      }
+    },
   },
   plugins: [ require('@tailwindcss/line-clamp') ],
 }

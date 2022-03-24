@@ -18,6 +18,7 @@ const Thumbnails = () => {
           src="/images/carousel/mensFashion.png"
           className="rounded-lg"
           layout="fill"
+          priority
         />
       </div>
       <div className="relative h-[224px] w-full">

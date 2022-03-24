@@ -6,7 +6,7 @@ const Categories = () => {
       <h2 className="text-center text-2xl font-medium text-[#01BD84] underline decoration-[#373c37bf]">
         Categories
       </h2>
-      <div className="mt-4 flex h-[272px] flex-wrap items-center justify-between gap-4">
+      <div className="mt-4 flex h-[272px] flex-wrap items-center justify-between gap-4 mobile-l:justify-around">
         <CategoryCard
           imageSrc="/images/category/mensFashionCategory.png"
           title="Mens Fashion"

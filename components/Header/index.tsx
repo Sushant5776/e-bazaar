@@ -10,7 +10,7 @@ const Header = () => {
       </div>
 
       {/* Right */}
-      <div className="rounded-tl-[18px] rounded-bl-[48px] bg-[#373c370d] py-[6px] px-4">
+      <div className="cursor-pointer rounded-tl-[18px] rounded-bl-[48px] bg-[#373c370d] py-[6px] px-4">
         <DotsHorizontalIcon className="relative left-1 h-7 w-7" />
       </div>
     </header>

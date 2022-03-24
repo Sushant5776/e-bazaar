@@ -4,6 +4,7 @@ import { XIcon } from '@heroicons/react/outline'
 import { GetServerSideProps, NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
+import { useRouter } from 'next/router'
 import { CategoryResponse } from 'types/category'
 import { CategoryPageContextParams } from 'types/interfaces'
 import { CategoryPageProps } from 'types/props'
@@ -13,6 +14,7 @@ const CategoryPage: NextPage<CategoryPageProps> = ({
   categoryImage,
   items,
 }) => {
+  const router = useRouter()
   return (
     <div
       style={{ backgroundImage: "url('/images/background/background.png')" }}
@@ -29,6 +31,7 @@ const CategoryPage: NextPage<CategoryPageProps> = ({
                 categoryTitle.charAt(0).toUpperCase()
               )}`}
         </title>
+        <meta name="theme-color" content="#e91e6340" />
       </Head>
       <div className="min-h-screen w-full backdrop-blur-3xl">
         {/* Header */}
@@ -43,8 +46,11 @@ const CategoryPage: NextPage<CategoryPageProps> = ({
                   categoryTitle.charAt(0).toUpperCase()
                 )}`}
           </h1>
-          <div className="relative h-12 w-12 rounded-bl-full bg-[#373c370d]">
-            <XIcon className="absolute right-1.5 top-1/2 h-6 w-6 -translate-y-2/3 opacity-90" />
+          <div
+            onClick={() => router.back()}
+            className="group relative h-12 w-12 rounded-bl-full bg-[#373c370d]"
+          >
+            <XIcon className="absolute right-1.5 top-1/2 h-6 w-6 -translate-y-2/3 decoration-black opacity-90 group-active:underline" />
           </div>
         </header>
 

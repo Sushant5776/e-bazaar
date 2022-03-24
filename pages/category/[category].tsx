@@ -61,7 +61,7 @@ const CategoryPage: NextPage<CategoryPageProps> = ({
 
         {/* Items */}
         {items.map((item) => (
-          <ItemCard item={item} />
+          <ItemCard key={item.id} item={item} />
         ))}
 
         {/* Footer */}

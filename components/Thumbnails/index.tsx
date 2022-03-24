@@ -10,6 +10,7 @@ const Thumbnails = () => {
       showArrows={false}
       stopOnHover
       infiniteLoop
+      showThumbs={false}
       className="mx-auto mt-5 h-[224px] w-[85%] rounded-lg"
     >
       <div className="relative h-[224px] w-full">

@@ -50,7 +50,7 @@ const CategoryPage: NextPage<CategoryPageProps> = ({
             onClick={() => router.back()}
             className="group relative h-12 w-12 rounded-bl-full bg-[#373c370d]"
           >
-            <XIcon className="absolute right-1.5 top-1/2 h-6 w-6 -translate-y-2/3 decoration-black opacity-90 group-active:underline" />
+            <XIcon className="absolute right-1.5 top-1/2 h-6 w-6 -translate-y-2/3 text-red-500 decoration-black opacity-90 group-active:underline" />
           </div>
         </header>
 

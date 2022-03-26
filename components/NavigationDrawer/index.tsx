@@ -1,13 +1,14 @@
 import { XIcon } from '@heroicons/react/solid'
 import { NavDrawerAtom } from 'atoms/navAtom'
 import { useRouter } from 'next/router'
-import { useSetRecoilState } from 'recoil'
+import { useRecoilState, useSetRecoilState } from 'recoil'
 
 const NavigationDrawer = () => {
   const router = useRouter()
-  const setShowNav = useSetRecoilState(NavDrawerAtom)
+  const [showNav, setShowNav] = useRecoilState(NavDrawerAtom)
 
   const closeOnClickingOutside = () => {
+    console.log('clicked')
     setShowNav(false)
   }
 
@@ -19,16 +20,20 @@ const NavigationDrawer = () => {
   return (
     <div
       onClick={() => closeOnClickingOutside()}
-      className={`fixed top-0 left-0 z-50 h-screen w-full bg-[#0000001a]`}
+      className={`fixed top-0 left-0 z-50 h-screen w-full bg-[#0000001a] ${
+        showNav ? 'block' : 'hidden'
+      }`}
     >
       <div
         onClick={(event) => event.stopPropagation()}
         className="absolute right-0 top-0 h-full w-max bg-white p-3 shadow-lg"
       >
-        <XIcon
+        <div
           onClick={() => setShowNav(false)}
-          className="absolute left-2 top-2 h-6 w-6 rounded-lg bg-transparent text-red-500"
-        />
+          className="absolute left-0 top-0 h-10 w-10 rounded-br-full bg-gray-100 pr-2 pb-2 pt-1 pl-1"
+        >
+          <XIcon className="h-6 w-6 text-red-500" />
+        </div>
         <ul className="mt-12 space-y-2.5 children:rounded-lg children:bg-gray-100 children:py-2.5 children:px-4">
           <li onClick={() => routeToPage('/category/mensFashion')}>
             Mens Fashion

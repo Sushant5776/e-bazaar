@@ -26,7 +26,8 @@ const Home: NextPage = () => {
 
       <div className="min-h-screen backdrop-blur-3xl">
         {/* Sidebar */}
-        {showNav ? <NavigationDrawer /> : ''}
+        {/* {showNav ? <NavigationDrawer /> : ''} */}
+        <NavigationDrawer />
         {/* Header */}
         <Header />
 

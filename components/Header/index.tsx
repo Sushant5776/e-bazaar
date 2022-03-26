@@ -21,9 +21,9 @@ const Header = () => {
       {/* Right */}
       <div
         onClick={() => setShowNav(true)}
-        className="cursor-pointer rounded-tl-[18px] rounded-bl-[48px] bg-[#373c370d] py-[6px] px-4"
+        className="group cursor-pointer rounded-tl-[18px] rounded-bl-[48px] bg-[#373c370d] py-[6px] px-4"
       >
-        <DotsHorizontalIcon className="relative left-1 h-7 w-7" />
+        <DotsHorizontalIcon className="relative left-1 h-7 w-7 group-active:underline" />
       </div>
     </header>
   )

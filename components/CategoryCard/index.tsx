@@ -11,14 +11,14 @@ const CategoryCard = ({
     <Link href={hrefLink}>
       <div
         style={{ backgroundImage: `url('${imageSrc}')` }}
-        className="relative h-32 w-32 cursor-pointer rounded-lg"
+        className="group relative h-32 w-32 cursor-pointer rounded-lg"
       >
         <div
           className={`absolute bottom-0 left-0 w-full rounded-b-lg bg-[#eceaebe6] py-2 ${
             position === 'l' ? 'rounded-tr-lg' : 'rounded-tl-lg'
           }`}
         >
-          <h1 className="text-center text-sm font-medium leading-4 text-[#51424E]">
+          <h1 className="text-center text-sm font-medium leading-4 text-[#51424E] group-active:underline">
             {title}
           </h1>
         </div>

@@ -1,7 +1,9 @@
 import { XIcon } from '@heroicons/react/solid'
+import { ShoppingCartIcon } from '@heroicons/react/outline'
 import { NavDrawerAtom } from 'atoms/navAtom'
+import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { useRecoilState, useSetRecoilState } from 'recoil'
+import { useRecoilState } from 'recoil'
 
 const NavigationDrawer = () => {
   const router = useRouter()
@@ -30,22 +32,43 @@ const NavigationDrawer = () => {
       >
         <div
           onClick={() => setShowNav(false)}
-          className="absolute left-0 top-0 h-10 w-10 rounded-br-full bg-gray-100 pr-2 pb-2 pt-1 pl-1"
+          className="group absolute left-0 top-0 h-10 w-10 rounded-br-full bg-gray-100 pr-2 pb-2 pt-1 pl-1"
         >
-          <XIcon className="h-6 w-6 text-red-500" />
+          <XIcon className="h-6 w-6 text-red-500 group-active:underline" />
         </div>
         <ul className="mt-12 space-y-2.5 children:rounded-lg children:bg-gray-100 children:py-2.5 children:px-4">
-          <li onClick={() => routeToPage('/category/mensFashion')}>
+          <li
+            className="active:underline"
+            onClick={() => routeToPage('/category/mensFashion')}
+          >
             Mens Fashion
           </li>
-          <li onClick={() => routeToPage('/category/womensFashion')}>
+          <li
+            className="active:underline"
+            onClick={() => routeToPage('/category/womensFashion')}
+          >
             Womens Fashion
           </li>
-          <li onClick={() => routeToPage('/category/electronics')}>
+          <li
+            className="active:underline"
+            onClick={() => routeToPage('/category/electronics')}
+          >
             Electronics
           </li>
-          <li onClick={() => routeToPage('/category/jewelry')}>Jewelry</li>
+          <li
+            className="active:underline"
+            onClick={() => routeToPage('/category/jewelry')}
+          >
+            Jewelry
+          </li>
         </ul>
+        <hr className="my-2.5" />
+        <Link href="/cart">
+          <button className="group flex w-full items-center justify-center rounded-lg border border-slate-200 bg-gray-100 py-2">
+            <ShoppingCartIcon className="mr-2 h-5 w-5 text-slate-700" />
+            <p className="text-blue-500 group-active:underline">Your Cart</p>
+          </button>
+        </Link>
       </div>
     </div>
   )

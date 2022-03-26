@@ -1,12 +1,17 @@
 import Image from 'next/image'
 import Rating from '@/components/Rating'
 import { CategoryResponse } from 'types/category'
+import { MouseEvent } from 'react'
 
 const ItemCard = ({
   item: { image, title, description, price, rating },
 }: {
   item: CategoryResponse
 }) => {
+  const buyItem = () => {
+    console.log(`You want to buy ${title} @ ${price}`)
+  }
+
   return (
     <div className="mx-auto my-4 h-max w-[85%] rounded-lg border border-[#dcdcdcbf] p-2">
       <div className="relative mx-auto h-32 w-[90%] rounded-lg">
@@ -36,7 +41,10 @@ const ItemCard = ({
           ({rating.count})
         </p>
       </span>
-      <button className="mx-auto mt-2 block w-full rounded-lg bg-[#FFBF4E] py-1.5 text-base font-medium text-[#373C37]">
+      <button
+        onClick={buyItem}
+        className="mx-auto mt-2 block w-full rounded-lg bg-[#FFBF4E] py-1.5 text-base font-medium text-[#373C37] active:bg-[#373c37] active:text-[#FFBF4E]"
+      >
         Buy @ ₹ {(price * 76.26).toFixed(2)}/-
       </button>
     </div>

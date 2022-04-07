@@ -1,16 +1,17 @@
-import { XIcon } from '@heroicons/react/solid'
+import { UserAddIcon, UserIcon, XIcon } from '@heroicons/react/solid'
 import { ShoppingCartIcon } from '@heroicons/react/outline'
 import { NavDrawerAtom } from 'atoms/navAtom'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { useRecoilState } from 'recoil'
+import { useRecoilState, useRecoilValue } from 'recoil'
+import { userAtomState } from 'atoms/userAtom'
 
 const NavigationDrawer = () => {
   const router = useRouter()
   const [showNav, setShowNav] = useRecoilState(NavDrawerAtom)
+  const user = useRecoilValue(userAtomState)
 
   const closeOnClickingOutside = () => {
-    console.log('clicked')
     setShowNav(false)
   }
 
@@ -28,7 +29,7 @@ const NavigationDrawer = () => {
     >
       <div
         onClick={(event) => event.stopPropagation()}
-        className="absolute right-0 top-0 h-full w-max bg-white p-3 shadow-lg"
+        className="absolute right-0 top-0 h-full w-max bg-white p-3 shadow-lg sm:w-1/3"
       >
         <div
           onClick={() => setShowNav(false)}
@@ -36,7 +37,7 @@ const NavigationDrawer = () => {
         >
           <XIcon className="h-6 w-6 text-red-500 group-active:underline" />
         </div>
-        <ul className="mt-12 space-y-2.5 children:rounded-lg children:bg-gray-100 children:py-2.5 children:px-4">
+        <ul className="mt-12 space-y-2.5 children:rounded-lg children:bg-gray-100 children:py-2.5 children:px-4  children:text-slate-900">
           <li
             className="active:underline"
             onClick={() => routeToPage('/category/mensFashion')}
@@ -63,12 +64,29 @@ const NavigationDrawer = () => {
           </li>
         </ul>
         <hr className="my-2.5" />
-        <Link href="/cart">
-          <button className="group flex w-full items-center justify-center rounded-lg border border-slate-200 bg-gray-100 py-2">
-            <ShoppingCartIcon className="mr-2 h-5 w-5 text-slate-700" />
-            <p className="text-blue-500 group-active:underline">Your Cart</p>
-          </button>
-        </Link>
+        {user ? (
+          <Link href="/cart">
+            <button className="group flex w-full items-center justify-center rounded-lg border border-slate-200 bg-gray-100 py-2">
+              <ShoppingCartIcon className="mr-2 h-5 w-5 text-slate-700" />
+              <p className="text-blue-500 group-active:underline">Your Cart</p>
+            </button>
+          </Link>
+        ) : (
+          <div className="space-y-2">
+            <Link href="/signin">
+              <button className="group flex w-full items-center justify-center rounded-lg border border-slate-200 bg-gray-100 py-2">
+                <UserIcon className="mr-2 h-5 w-5 text-slate-700" />
+                <p className="text-blue-500 group-active:underline">Login</p>
+              </button>
+            </Link>
+            <Link href="/signup">
+              <button className="group flex w-full items-center justify-center rounded-lg border border-slate-200 bg-gray-100 py-2">
+                <UserAddIcon className="mr-2 h-5 w-5 text-slate-700" />
+                <p className="text-blue-500 group-active:underline">Sign Up</p>
+              </button>
+            </Link>
+          </div>
+        )}
       </div>
     </div>
   )

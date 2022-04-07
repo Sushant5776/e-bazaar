@@ -1,13 +1,15 @@
 import Image from 'next/image'
 import Rating from '@/components/Rating'
 import { CategoryResponse } from 'types/category'
-import { MouseEvent } from 'react'
+import { useRecoilValue } from 'recoil'
+import { userAtomState } from 'atoms/userAtom'
 
 const ItemCard = ({
   item: { image, title, description, price, rating },
 }: {
   item: CategoryResponse
 }) => {
+  const user = useRecoilValue(userAtomState)
   const buyItem = () => {
     console.log(`You want to buy ${title} @ ${price}`)
   }
@@ -41,12 +43,16 @@ const ItemCard = ({
           ({rating.count})
         </p>
       </span>
-      <button
-        onClick={buyItem}
-        className="mx-auto mt-2 block w-full rounded-lg bg-[#FFBF4E] py-1.5 text-base font-medium text-[#373C37] active:bg-[#373c37] active:text-[#FFBF4E]"
-      >
-        Buy @ ₹ {(price * 76.26).toFixed(2)}/-
-      </button>
+      {user ? (
+        <button
+          onClick={buyItem}
+          className="mx-auto mt-2 block w-full rounded-lg bg-[#FFBF4E] py-1.5 text-base font-medium text-[#373C37] active:bg-[#373c37] active:text-[#FFBF4E]"
+        >
+          Buy @ ₹ {(price * 76.26).toFixed(2)}/-
+        </button>
+      ) : (
+        ''
+      )}
     </div>
   )
 }

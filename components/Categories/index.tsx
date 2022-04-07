@@ -2,11 +2,11 @@ import CategoryCard from '@/components/CategoryCard'
 
 const Categories = () => {
   return (
-    <div className="mx-auto mt-4 w-[80%]">
+    <div className="mx-auto mt-4 w-[80%] sm:w-[90%]">
       <h2 className="text-center text-2xl font-medium text-[#01BD84] underline decoration-[#373c37bf]">
         Categories
       </h2>
-      <div className="mt-4 flex h-[272px] flex-wrap items-center justify-between gap-4 mobile-l:justify-around">
+      <div className="mt-4 flex h-[272px] flex-wrap items-center justify-between gap-4 sm:h-max sm:justify-between mobile-l:justify-around">
         <CategoryCard
           imageSrc="/images/category/mensFashionCategory.png"
           title="Mens Fashion"

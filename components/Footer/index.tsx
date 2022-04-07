@@ -2,7 +2,7 @@ import { MailIcon, PhoneIcon } from '@heroicons/react/solid'
 
 const Footer = () => {
   return (
-    <footer className="mt-5 h-max rounded-t-lg bg-[#51424ee6] py-4">
+    <footer className="mt-5 h-max rounded-t-lg bg-[#51424ee6] py-4 sm:relative sm:bottom-0 sm:w-full">
       <h2 className="inline-block w-full text-center text-lg font-medium text-[#E9C300]">
         e-bazaar.com
       </h2>
